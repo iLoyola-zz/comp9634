@@ -14,43 +14,144 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /*****************
 svg
 ******************/
 .icon {
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	fill: currentColor;
+  width: 4em;
+  height: 4em;
+  fill: rgb( 255, 255, 255 );
+  margin-top: -32px;
+  position: absolute;
+  top: 50%;
 }
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.final-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba( 0, 0, 0, 0.5 );
+}
+
+.final-modal-left {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10%;
+}
+
+.final-modal-left-icon {
+  left: 20%;
+}
+
+.final-modal-right {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10%;
+}
+
+.final-modal-right-icon {
+  right: 20%;
+}
+
+.final-modal-meta-l {
+
+}
+
+.final-modal-meta {
+
+}
+
+.final-modal-meta-heading {
+
+}
+
+.final-modal-meta-text {
+
+}
+
+.final-header {
+
+}
+
+.final-header-heading {
+
+}
+
+.final-l {
+
+}
+
+.final-results {
+
+}
+
+.final-results-list {
+
+}
+
+.final-results-list-item {
+
+}
+
+.final-results-heading {
+
+}
+
+.final-results-text {
+
+}
+

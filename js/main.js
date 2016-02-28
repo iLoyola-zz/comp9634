@@ -7,14 +7,14 @@ $( document ).ready( function() {
   .done( function( response ) {
     var results = response.data.results;
     var resultsLen = results.length;
-    var output = '<ul class="final-list">';
+    var output = '<ul class="final-results-list">';
 
     console.log( results[0] );
 
     for(var i=0; i<resultsLen; i++){
       var imgPath = results[i].thumbnail.path + '/standard_large.' + results[i].thumbnail.extension;
       console.log( imgPath );
-      output += '<li class="final-list-item"><img src="' + imgPath + '"><h3 class="final-list-item-heading">'+results[i].name+'</h3><p class="final-list-item-text">' + results[i].description + '</p></li>';
+      output += '<li class="final-results-list-item"><img src="' + imgPath + '"><h3 class="final-results-heading">'+results[i].name+'</h3><p class="final-results-text">' + results[i].description + '</p></li>';
 
     }
     output += '</ul>';

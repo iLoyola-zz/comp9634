@@ -5,27 +5,34 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <symbol id="icon-circle-right" viewBox="0 0 1024 1024">
-      <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 928c-229.75 0-416-186.25-416-416s186.25-416 416-416 416 186.25 416 416-186.25 416-416 416z"></path>
-      <path class="path2" d="M354.744 706.744l90.512 90.512 285.254-285.256-285.256-285.254-90.508 90.508 194.744 194.746z"></path>
-    </symbol>
-    <symbol id="icon-circle-left" viewBox="0 0 1024 1024">
-      <path class="path1" d="M512 1024c282.77 0 512-229.23 512-512s-229.23-512-512-512-512 229.23-512 512 229.23 512 512 512zM512 96c229.75 0 416 186.25 416 416s-186.25 416-416 416-416-186.25-416-416 186.25-416 416-416z"></path>
-      <path class="path2" d="M669.256 317.256l-90.512-90.512-285.254 285.256 285.256 285.254 90.508-90.508-194.744-194.746z"></path>
-    </symbol>
+    <svg>
+      <symbol id="icon-circle-right" viewBox="0 0 1024 1024">
+        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 928c-229.75 0-416-186.25-416-416s186.25-416 416-416 416 186.25 416 416-186.25 416-416 416z"></path>
+        <path class="path2" d="M354.744 706.744l90.512 90.512 285.254-285.256-285.256-285.254-90.508 90.508 194.744 194.746z"></path>
+      </symbol>
+      <symbol id="icon-circle-left" viewBox="0 0 1024 1024">
+        <path class="path1" d="M512 1024c282.77 0 512-229.23 512-512s-229.23-512-512-512-512 229.23-512 512 229.23 512 512 512zM512 96c229.75 0 416 186.25 416 416s-186.25 416-416 416-416-186.25-416-416 186.25-416 416-416z"></path>
+        <path class="path2" d="M669.256 317.256l-90.512-90.512-285.254 285.256 285.256 285.254 90.508-90.508-194.744-194.746z"></path>
+      </symbol>
+    </svg>
     <div class="final-modal">
-      <a href="">
-        <svg class="icon icon-circle-left">
+      <a class="final-modal-left" href="#">
+        <svg class="icon final-modal-left-icon">
           <use xlink:href="#icon-circle-left"></use>
         </svg>
       </a>
-      <a href="">
-        <svg class="icon icon-circle-right">
+      <div class="final-modal-meta-l">
+        <div class="final-modal-meta js-final-modal-meta"></div>
+      </div>
+      <a class="final-modal-right" href="#">
+        <svg class="icon final-modal-right-icon">
           <use xlink:href="#icon-circle-right"></use>
         </svg>
       </a>
     </div>
-    <h1>Final Project</h1>
+      <header class="final-header">
+        <h1 class="final-header-heading">Final Project</h1>
+      </header>
     <div class="final-l">
       <div class="final-results js-final-results"></div>
     </div>

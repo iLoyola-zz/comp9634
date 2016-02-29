@@ -21,25 +21,31 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol, ul {
   list-style: none;
 }
+
 blockquote, q {
   quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -56,12 +62,12 @@ svg
   position: absolute;
   top: 50%;
 }
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
-
 
 html {
   height: 100%;
@@ -72,6 +78,14 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+svg,
+.hidden {
+  display: none;
 }
 
 .final-modal {
@@ -80,7 +94,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba( 0, 0, 0, 0.5 );
+  background-color: rgba( 0, 0, 0, 0.8 );
+  z-index: 1;
 }
 
 .final-modal-left {
@@ -108,11 +123,14 @@ body {
 }
 
 .final-modal-meta-l {
-
+  width: 464px;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .final-modal-meta {
-
+  width: 100%;
 }
 
 .final-modal-meta-heading {
@@ -124,7 +142,13 @@ body {
 }
 
 .final-header {
-
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .final-header-heading {
@@ -140,18 +164,55 @@ body {
 }
 
 .final-results-list {
-
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  flex-flow: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  width: 100%;
 }
 
 .final-results-list-item {
+  width: 140px;
+  margin-bottom: 0.3rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  margin-top: 0.3rem;
+  height: 140px;
+  position: relative;
+}
 
+.final-results-link {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.final-results-info {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba( 0, 0, 0, 0.7 );
+  color: rgb( 255, 255, 255 );
+  font-size: 0.750em;
+  padding: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow-multiline: ellipsis;
 }
 
 .final-results-heading {
-
+  font-weight: 700;
 }
 
 .final-results-text {
-
+  font-weight: 400;
 }
 

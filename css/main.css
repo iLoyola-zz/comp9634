@@ -57,10 +57,7 @@ svg
 .icon {
   width: 4em;
   height: 4em;
-  fill: rgb( 255, 255, 255 );
-  margin-top: -32px;
   position: absolute;
-  top: 50%;
 }
 
 *,
@@ -107,7 +104,10 @@ svg,
 }
 
 .final-modal-left-icon {
+  fill: rgb( 255, 255, 255 );
   left: 20%;
+  margin-top: -32px;
+  top: 50%;
 }
 
 .final-modal-right {
@@ -119,11 +119,16 @@ svg,
 }
 
 .final-modal-right-icon {
+  fill: rgb( 255, 255, 255 );
   right: 20%;
+  margin-top: -32px;
+  top: 50%;
 }
 
 .final-modal-meta-l {
-  width: 464px;
+  background-color: rgb( 255, 255, 255 );
+  border-radius: 1rem;
+  width: 504px;
   margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
@@ -133,12 +138,37 @@ svg,
   width: 100%;
 }
 
-.final-modal-meta-heading {
-
+.icon-cancel-circle {
+  display: block;
+  fill: rgb( 0, 0, 0 );
+  top: 0;
+  right: 0;
+  z-index: 1;
 }
 
-.final-modal-meta-text {
+.final-modal-area {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  position: relative;
+}
 
+.final-modal-area-info {
+  
+  color: rgb( 0, 0, 0 );
+}
+
+.final-modal-area-heading {
+  font-size: 1.250em;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.final-modal-area-text {
+  font-size: 1.125em;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .final-header {

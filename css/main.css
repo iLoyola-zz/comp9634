@@ -55,9 +55,9 @@ table {
 svg
 ******************/
 .icon {
-  width: 4em;
   height: 4em;
   position: absolute;
+  width: 4em;
 }
 
 *,
@@ -72,12 +72,12 @@ html {
 }
 
 body {
-  height: 100%;
-  width: 100%;
-  position: relative;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 16px;
+  height: 100%;
   line-height: 16px;
+  position: relative;
+  width: 100%;
 }
 
 svg,
@@ -86,21 +86,25 @@ svg,
 }
 
 .final-modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: rgba( 0, 0, 0, 0.8 );
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   z-index: 1;
 }
 
 .final-modal-left {
   height: 100%;
-  position: absolute;
   left: 0;
+  position: absolute;
   top: 0;
   width: 10%;
+}
+
+.final-modal-left[disabled] {
+  cursor: default;
 }
 
 .final-modal-left-icon {
@@ -108,6 +112,10 @@ svg,
   left: 20%;
   margin-top: -32px;
   top: 50%;
+}
+
+.final-modal-left[disabled] .final-modal-left-icon {
+  fill: rgb( 24, 24, 24 );
 }
 
 .final-modal-right {
@@ -118,20 +126,28 @@ svg,
   width: 10%;
 }
 
+.final-modal-right[disabled] {
+  cursor: default;
+}
+
 .final-modal-right-icon {
   fill: rgb( 255, 255, 255 );
-  right: 20%;
   margin-top: -32px;
+  right: 20%;
   top: 50%;
+}
+
+.final-modal-right[disabled] .final-modal-right-icon {
+  fill: rgb( 24, 24, 24 );
 }
 
 .final-modal-meta-l {
   background-color: rgb( 255, 255, 255 );
   border-radius: 1rem;
-  width: 504px;
-  margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10%;
+  width: 504px;
 }
 
 .final-modal-meta {
@@ -144,8 +160,8 @@ svg,
   background-size: cover;
   height: 64px;
   position: absolute;
-  top: -55px;
   right: -55px;
+  top: -55px;
   width: 64px;
 }
 
@@ -179,13 +195,13 @@ svg,
 }
 
 .final-header {
-  width: 100%;
-  max-width: 900px;
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
+  max-width: 900px;
   padding-top: 1rem;
   text-align: center;
+  width: 100%;
 }
 
 .final-header-heading {
@@ -201,10 +217,10 @@ svg,
 }
 
 .final-results-list {
-  display: flex;
   align-content: center;
-  justify-content: flex-start;
+  display: flex;
   flex-flow: wrap;
+  justify-content: flex-start;
   margin-left: auto;
   margin-right: auto;
   max-width: 900px;
@@ -212,37 +228,35 @@ svg,
 }
 
 .final-results-list-item {
-  width: 140px;
+  height: 140px;
   margin-bottom: 0.3rem;
   margin-left: 0.3rem;
   margin-right: 0.3rem;
   margin-top: 0.3rem;
-  height: 140px;
   position: relative;
+  width: 140px;
 }
 
 .final-results-link {
+  background-color: transparent;
   border: 0;
+  cursor: pointer;
   outline: 0;
   padding: 0;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .final-results-info {
-  position: absolute;
-  top: 65%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
   background-color: rgba( 0, 0, 0, 0.7 );
+  bottom: 0;
   color: rgb( 255, 255, 255 );
-  font-size: 0.750em;
+  font-size: 0.800em;
+  left: 0;
   padding: 0.4rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow-multiline: ellipsis;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 65%;
+
 }
 
 .final-results-heading {
@@ -251,5 +265,8 @@ svg,
 
 .final-results-text {
   font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 

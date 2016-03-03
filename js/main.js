@@ -31,8 +31,16 @@ $( document ).ready( function() {
       body.find( '.icon' ).css('display', 'block');
       body.find( '.js-final-modal' ).removeClass( 'hidden' );
       $( '.js-final-modal-meta' ).html( '<div class="final-modal-area">' + closeButton + '<img src="' + imgBig + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[currentData].name+'</h3><p class="final-modal-area-text">' + results[currentData].description + '</p></div>' );
-      $( '.final-modal-left' ).on( 'click', leftModal );
-      $( '.final-modal-right' ).on( 'click', rightModal );
+      if( currentData === '0' ){
+        $( '.final-modal-left' ).prop( 'disabled', true );
+      } else {
+        $( '.final-modal-left' ).on( 'click', leftModal );
+      }
+      if( currentData === resultsLen ){
+        $( '.final-modal-right' ).prop( 'disabled', true );
+      } else {
+        $( '.final-modal-right' ).on( 'click', rightModal );
+      }
     };
 
     var closeModal = function( event ) {
@@ -43,11 +51,14 @@ $( document ).ready( function() {
 
     var leftModal = function( event ) {
       event.stopPropagation();
-
+      var currentData = currentData - 1;
+      $( '.js-final-modal-meta' ).html( '<div class="final-modal-area">' + closeButton + '<img src="' + imgBig + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[currentData].name+'</h3><p class="final-modal-area-text">' + results[currentData].description + '</p></div>' );
     };
 
     var rightModal = function( event ) {
       event.stopPropagation();
+      var currentData = currentData + 1;
+      $( '.js-final-modal-meta' ).html( '<div class="final-modal-area">' + closeButton + '<img src="' + imgBig + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[currentData].name+'</h3><p class="final-modal-area-text">' + results[currentData].description + '</p></div>' );
     };
 
     for( var i=0; i<resultsLen; i++ ){
@@ -64,8 +75,7 @@ $( document ).ready( function() {
     $( '.js-final-results-link' ).on( 'mouseenter', showInfo );
     $( '.js-final-results-link' ).on( 'mouseleave', hideInfo );
     $( '.js-final-results-link' ).on( 'click', openModal );
-    $( '.js-final-modal-close' ).on( 'click', closeModal );
-    $().on( 'click', rightModal );
+    $( '.js-final-modal-close' ).on( 'click', 'js-final-modal-close', closeModal );
   });
 
 });

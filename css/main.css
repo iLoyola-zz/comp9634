@@ -138,12 +138,19 @@ svg,
   width: 100%;
 }
 
-.icon-cancel-circle {
-  display: block;
-  fill: rgb( 0, 0, 0 );
-  top: 0;
-  right: 0;
-  z-index: 1;
+.final-modal-close {
+  background-image: url( "../images/close.png" );
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 64px;
+  position: absolute;
+  top: -55px;
+  right: -55px;
+  width: 64px;
+}
+
+.final-modal-close:hover {
+  cursor: pointer;
 }
 
 .final-modal-area {
@@ -177,7 +184,7 @@ svg,
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1rem;
+  padding-top: 1rem;
   text-align: center;
 }
 

@@ -4,7 +4,7 @@ $( document ).ready( function() {
   $.getJSON( marvelAPI, {
     apikey: '1024760f96a058cf6804cd870f6fdc97',
     limit: '20',
-    offset: '1231'
+    offset: '184'
   })
   .done( function( response ) {
 
@@ -30,13 +30,13 @@ $( document ).ready( function() {
       var imgBig = results[currentData].thumbnail.path + '/landscape_incredible.' + results[currentData].thumbnail.extension;
       body.find( '.icon' ).css('display', 'block');
       body.find( '.js-final-modal' ).removeClass( 'hidden' );
-      $( '.js-final-modal-meta' ).html( '<div class="final-modal-area">' + closeButton + '<img src="' + imgBig + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[currentData].name+'</h3><p class="final-modal-area-text">' + results[currentData].description + '</p></div>' );
-      if( currentData === '0' ){
+      $( '.js-final-modal-meta' ).html( '<div class="final-modal-area" data-current="' + currentData + '">' + closeButton + '<img src="' + imgBig + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[currentData].name+'</h3><p class="final-modal-area-text">' + results[currentData].description + '</p></div>' );
+      if( currentData === 0 ){
         $( '.final-modal-left' ).prop( 'disabled', true );
       } else {
         $( '.final-modal-left' ).on( 'click', leftModal );
       }
-      if( currentData === resultsLen ){
+      if( currentData === resultsLen - 1 ){
         $( '.final-modal-right' ).prop( 'disabled', true );
       } else {
         $( '.final-modal-right' ).on( 'click', rightModal );
@@ -44,21 +44,25 @@ $( document ).ready( function() {
     };
 
     var closeModal = function( event ) {
-      console.log( this );
+      event.stopPropagation();
+      event.preventDefault();
       body.find( '.icon' ).css('display', 'none');
       body.find( '.js-final-modal' ).addClass( 'hidden' );
     };
 
     var leftModal = function( event ) {
       event.stopPropagation();
-      var currentData = currentData - 1;
-      $( '.js-final-modal-meta' ).html( '<div class="final-modal-area">' + closeButton + '<img src="' + imgBig + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[currentData].name+'</h3><p class="final-modal-area-text">' + results[currentData].description + '</p></div>' );
+      var currentData = $( '.final-modal-area' ).data( 'current' );
+      var previousData = currentData - 1;
+      $( '.js-final-modal-meta' ).html( '<div class="final-modal-area">' + closeButton + '<img src="' + results[previousData].thumbnail.path + '/landscape_incredible.' + results[previousData].thumbnail.extension + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[previousData].name+'</h3><p class="final-modal-area-text">' + results[previousData].description + '</p></div>' );
     };
 
     var rightModal = function( event ) {
       event.stopPropagation();
-      var currentData = currentData + 1;
-      $( '.js-final-modal-meta' ).html( '<div class="final-modal-area">' + closeButton + '<img src="' + imgBig + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[currentData].name+'</h3><p class="final-modal-area-text">' + results[currentData].description + '</p></div>' );
+      var currentData = $( '.final-modal-area' ).data( 'current' );
+      console.log( currentData );
+      var nextData = currentData + 1;
+      $( '.js-final-modal-meta' ).html( '<div class="final-modal-area">' + closeButton + '<img src="' + results[nextData].thumbnail.path + '/landscape_incredible.' + results[nextData].thumbnail.extension + '"><div class="final-modal-area-info"><h3 class="final-modal-area-heading">'+results[nextData].name+'</h3><p class="final-modal-area-text">' + results[nextData].description + '</p></div>' );
     };
 
     for( var i=0; i<resultsLen; i++ ){
@@ -68,14 +72,12 @@ $( document ).ready( function() {
     }
     outputGrid += '</ul>';
 
-
-
     $( '.js-final-results' ).append( outputGrid );
 
     $( '.js-final-results-link' ).on( 'mouseenter', showInfo );
     $( '.js-final-results-link' ).on( 'mouseleave', hideInfo );
     $( '.js-final-results-link' ).on( 'click', openModal );
-    $( '.js-final-modal-close' ).on( 'click', 'js-final-modal-close', closeModal );
+    $( '.js-final-modal' ).on( 'click', closeModal );
   });
 
 });

@@ -96,11 +96,22 @@ svg,
 }
 
 .final-modal-left {
+  background-color: transparent;
+  border: 0;
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
+  outline: 0;
   width: 10%;
+}
+
+.final-modal-left:hover {
+  cursor: pointer;
+}
+
+.final-modal-left:hover .final-modal-left-icon {
+  fill: rgb( 255, 0, 0 );
 }
 
 .final-modal-left[disabled] {
@@ -119,11 +130,22 @@ svg,
 }
 
 .final-modal-right {
+  background-color: transparent;
+  border: 0;
   height: 100%;
   position: absolute;
   right: 0;
   top: 0;
+  outline: 0;
   width: 10%;
+}
+
+.final-modal-right:hover {
+  cursor: pointer;
+}
+
+.final-modal-right:hover .final-modal-right-icon {
+  fill: rgb( 255, 0, 0 );
 }
 
 .final-modal-right[disabled] {
@@ -249,7 +271,7 @@ svg,
   background-color: rgba( 0, 0, 0, 0.7 );
   bottom: 0;
   color: rgb( 255, 255, 255 );
-  font-size: 0.800em;
+  font-size: 0.800rem;
   left: 0;
   padding: 0.4rem;
   position: absolute;
@@ -270,3 +292,7 @@ svg,
   white-space: nowrap;
 }
 
+footer {
+  margin: 2rem 0;
+  text-align: center;
+}
